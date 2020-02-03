@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>JavaScript example</title>
+</head>
+<body>
+<p> สุ่มเลข3หลัก (0 -9)และมีเสียงเลขที่สุ่มออกทางลำโพง</p>
+<button onclick="myF1()"> คลิกเมาส์  </button>
+<h1>
+<p id="rand1"> </p> 
+<p id="s1"> </p> <p id="s2"> </p> <p id="s3"> </p> 
+</h1>
+<script>
+var x=0,y=0,z=0;
+function myF1(){
+  setTimeout(myF2,700);
+   x=Math.floor(Math.random()*10);
+   y=Math.floor(Math.random()*10);
+   z=Math.floor(Math.random()*10);
+//document.getElementById("rand1").innerHTML="|"+x+"|"+y+"|"+z+"|";
+document.getElementById("rand1").innerHTML="<table border='1' bordercolor='blue'><tr><td>"+"<h1>"+x+"</td><td>"+"<h1>"+y+"</td><td>"+"<h1>"+z+"</td></tr></table>";
+document.getElementById("s1").innerHTML="<OBJECT DATA='soundNumber/"+x+".wav' TYPE='audio/wav' WIDTH=0 HEIGHT=0></OBJECT>";
+}
+function myF2(){
+ setTimeout(myF3,700);
+ document.getElementById("s2").innerHTML="<OBJECT DATA='soundNumber/"+y+".wav' TYPE='audio/wav' WIDTH=0 HEIGHT=0></OBJECT>";
+}
+function myF3(){
+  document.getElementById("s3").innerHTML= "<OBJECT DATA='soundNumber/"+z+".wav' TYPE='audio/wav' WIDTH=0 HEIGHT=0></OBJECT>";
+}
+</script>
+</body>
+</html>
